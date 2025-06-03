@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import FirstComponet from './components/FirstComponent'
+import TemplateExpressions from './components/TemplateExpressions'
 import './App.css'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <h1>Fundamentos React</h1>
       <FirstComponet/>
+      <TemplateExpressions/>
     </>
   )
 }
