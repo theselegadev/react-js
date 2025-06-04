@@ -4,6 +4,14 @@ const Events = ()=>{
         console.log(e)
     }
 
+    const isBigger = (age)=>{
+        if(age >= 18){
+            return <p>Você é maior de idade</p>
+        }else{
+            return <p>Você não maior de idade</p>
+        }
+    }
+
     return(
         <div>
             <div>
@@ -19,6 +27,7 @@ const Events = ()=>{
                     }
                 }}>Clique em mim também</button>
             </div>
+            {isBigger(18)}
         </div>
     )
 }
