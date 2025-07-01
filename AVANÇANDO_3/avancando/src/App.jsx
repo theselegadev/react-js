@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import logo from "./assets/logo_js.png" 
 import ManageData from './components/ManageData'
+import ListRender from './components/ListRender'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
         <img src={logo} alt="" />
       </div>
       <ManageData/>
+      <ListRender/>
     </>
   )
 }
