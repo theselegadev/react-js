@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import logo from "./assets/logo_js.png" 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +13,10 @@ function App() {
          {/* Imagem em public */}
          <img src="/logo_react.png" alt="" />
       </div>  
+      {/* Imagem em assets */}
+      <div>
+        <img src={logo} alt="" />
+      </div>
     </>
   )
 }
