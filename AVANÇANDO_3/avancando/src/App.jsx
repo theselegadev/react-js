@@ -8,15 +8,20 @@ import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
 import Fragment from './components/Fragment'
 import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
 
 function App() {
   const [name, setName] = useState("Matheus")
+
   const [cars] = useState([
     {id: 1, brand: "Ferrari", color: "vermelho", novo: true, km: 0},
     {id: 2, brand: "Lamborghini", color: "amarelo", novo: true, km: 0},
     {id: 3, brand: "Chevrolet", color: "preto", novo: false, km: 2000}
   ])
 
+  function showMessage(){
+    console.log("Evento do componente pai")
+  }
 
   return (
     <>
@@ -63,6 +68,9 @@ function App() {
         <h3>Testando container</h3>
         <p>Qualquer coisa</p>
       </Container>
+
+      {/* Executar função */}
+      <ExecuteFunction myFunction={showMessage}/>
     </>
   )
 }
