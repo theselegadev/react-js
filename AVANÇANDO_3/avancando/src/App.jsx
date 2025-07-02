@@ -4,9 +4,11 @@ import logo from "./assets/logo_js.png"
 import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
+import ShowUserName from './components/ShowUserName'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState("Matheus")
+
 
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
       <ManageData/>
       <ListRender/>
       <ConditionalRender/>
+      <ShowUserName name={name} />
+      <button onClick={()=>(setName("Gabriel"))}>Mudar nome:</button>
     </>
   )
 }
