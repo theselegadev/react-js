@@ -9,9 +9,16 @@ import CarDetails from './components/CarDetails'
 import Fragment from './components/Fragment'
 import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
+import Message from './components/Message'
+import ChangeMessageState from './components/ChangeMessageState'
 
 function App() {
   const [name, setName] = useState("Matheus")
+  const [message,setMessage] = useState("");
+
+  const handleMessage = (msg)=>{
+    setMessage(msg);
+  }
 
   const [cars] = useState([
     {id: 1, brand: "Ferrari", color: "vermelho", novo: true, km: 0},
@@ -71,6 +78,10 @@ function App() {
 
       {/* Executar função */}
       <ExecuteFunction myFunction={showMessage}/>
+
+      {/* State lift */}
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
     </>
   )
 }
