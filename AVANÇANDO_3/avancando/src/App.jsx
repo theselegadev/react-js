@@ -30,7 +30,10 @@ function App() {
       <ShowUserName name={name} />
       <button onClick={()=>(setName("Gabriel"))}>Mudar nome:</button>
       {/* desestruturação com props */}
-      <CarDetails brand="BMW" km={12} color="Cinza"/>
+      <CarDetails brand="BMW" km={12} color="Cinza" novo={true}/>
+      {/* Reaproveitamento */}
+      <CarDetails brand="Ford" km={300} color="Azul" novo={false}/>
+      <CarDetails brand="Citroen" km={1000} color="Preto" novo={true} />
     </>
   )
 }
