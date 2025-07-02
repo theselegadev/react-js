@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState } from 'react'
 import './App.css'
 import logo from "./assets/logo_js.png" 
 import ManageData from './components/ManageData'
@@ -6,6 +6,7 @@ import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
+import Fragment from './components/Fragment'
 
 function App() {
   const [name, setName] = useState("Matheus")
@@ -43,6 +44,8 @@ function App() {
       {cars.map((car)=>(
         <CarDetails key={car.id} brand={car.brand} km={car.km} color={car.color} novo={car.novo}/>
       ))}
+      {/* fragment */}
+      <Fragment/>
     </>
   )
 }
