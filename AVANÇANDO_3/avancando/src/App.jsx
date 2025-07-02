@@ -5,6 +5,7 @@ import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
+import CarDetails from './components/CarDetails'
 
 function App() {
   const [name, setName] = useState("Matheus")
@@ -25,8 +26,11 @@ function App() {
       <ManageData/>
       <ListRender/>
       <ConditionalRender/>
+      {/* props */}
       <ShowUserName name={name} />
       <button onClick={()=>(setName("Gabriel"))}>Mudar nome:</button>
+      {/* desestruturação com props */}
+      <CarDetails brand="BMW" km={12} color="Cinza"/>
     </>
   )
 }
