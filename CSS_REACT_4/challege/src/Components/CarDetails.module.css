@@ -1,0 +1,14 @@
+.red{
+    background-color: red;
+    color: white;
+    font-size: large;
+    margin: 20px;
+    border-radius: 10px;
+}
+.green{
+    background-color: green;
+    color: yellow;
+    font-size: large;
+    margin: 20px;
+    border-radius: 10px;
+}
