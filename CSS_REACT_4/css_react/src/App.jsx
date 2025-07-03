@@ -17,6 +17,9 @@ function App() {
 
       {/* CSS Inline dinâmico */}
       <h2 style={n < 10 ? {color: "blue", backgroundColor: "pink"} : {color: "yellow", backgroundColor: "gray"}}>Css inline dinâmico</h2>
+      
+      {/* Classe dinâmica */}
+      <h2 className={n<10 ? "redTitle" : "greenTitle"}>Esse título vai ter classe dinâmica</h2>
     </>
   )
 }

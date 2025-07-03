@@ -6,3 +6,11 @@ body{
 h1{
   color: purple;
 }
+.redTitle{
+  background-color: orange;
+  color: red;
+}
+.greenTitle{
+  background-color: green;
+  color: yellow;
+}
