@@ -8,6 +8,12 @@ form{
     background-color: rgb(228, 226, 226);
     border-radius: 10px;
 }
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 input, textarea, select{
     width: 200px;
     height: 30px;
