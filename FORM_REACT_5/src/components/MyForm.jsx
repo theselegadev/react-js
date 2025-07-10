@@ -17,6 +17,9 @@ const MyForm = ({user}) => {
     function handleSubmit(event){
         event.preventDefault()
         console.log("Dados enviados: ", name, email, senha)
+        setName('')
+        setEmail('')
+        setSenha('')
     }
     
   return (
