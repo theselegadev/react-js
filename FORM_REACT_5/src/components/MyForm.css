@@ -1,0 +1,23 @@
+form{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(228, 226, 226);
+    border-radius: 10px;
+}
+input, textarea, select{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid blue;
+}
+button{
+    width: 200px;
+    height: 30px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: white;
+}
