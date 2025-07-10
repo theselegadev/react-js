@@ -14,12 +14,15 @@ const MyForm = () => {
     function handleEmail(event){
         setEmail(event.target.value)
     }
-
-    console.log(name,email,senha)
+    function handleSubmit(event){
+        event.preventDefault()
+        console.log("Dados enviados: ", name, email, senha)
+    }
+    
   return (
     <div>
         {/* Criação de formulários */}
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="name">Nome:</label>
             <input onChange={handleName} type="text"  name='name' placeholder='Digite o seu nome'/>
             {/* label envolvendo o input */}
