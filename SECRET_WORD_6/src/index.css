@@ -6,3 +6,18 @@
   border: none;
   outline: none;
 }
+button{
+    height: 50px;
+    width: 200px;
+    font-size: larger;
+    background-color: rgba(100, 79, 100, 0.719);
+    border-radius: 10px;
+    color: rgb(240, 238, 238);
+    cursor: pointer;
+    transition: ease-in-out 200ms;
+}
+button:hover{
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.274);
+    transform: translateY(-5px);
+    background-color: rgba(44, 1, 42, 0.486);
+}
