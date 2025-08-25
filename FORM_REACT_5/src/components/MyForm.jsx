@@ -7,6 +7,7 @@ const MyForm = ({user}) => {
     const [email,setEmail] = useState(user ? user.email : '')
     // alteração de state inline
     const [senha,setSenha] = useState(user ? user.senha : '')
+    const [bio,setBio] = useState("")
 
     function handleName(event){
         setName(event.target.value)
@@ -16,10 +17,11 @@ const MyForm = ({user}) => {
     }
     function handleSubmit(event){
         event.preventDefault()
-        console.log("Dados enviados: ", name, email, senha)
+        console.log("Dados enviados: ", name, email, senha, bio)
         setName('')
         setEmail('')
         setSenha('')
+        setBio('')
     }
     
   return (
@@ -37,6 +39,11 @@ const MyForm = ({user}) => {
             <label>
                 <span>Senha</span>
                 <input type="text" placeholder='senha' onChange={(event)=>(setSenha(event.target.value))} value={senha}/>
+            </label>
+            {/* texta area */}
+            <label>
+                <span>Bio:</span>
+                <textarea placeholder='Biografia do usuário:' onChange={(e)=>setBio(e.target.value)} value={bio}></textarea>
             </label>
             <button type='submit'>Enviar</button>
         </form>
