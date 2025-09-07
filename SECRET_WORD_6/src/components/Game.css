@@ -1,0 +1,50 @@
+.game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.wordContainer{
+    border: 10px solid rgb(115, 95, 126);
+    padding: 1.5em;
+    margin: 1.5em;
+    gap: 10px;
+    display: flex;
+}
+.letter, .blankSquare{
+    font-size: 70px;
+    line-height: 1.5;
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+.letterContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    font-size: large;
+}
+.letterContainer form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.letterContainer form input{
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    font-size: 50px;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
