@@ -5,7 +5,7 @@ import StartScreen from "./components/StartScreen";
 import Game from "./components/Game";
 import EndGame from "./components/EndGame";
 // hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // stages
 const stages = [
@@ -67,10 +67,25 @@ function App() {
         ...actualWrongLetters,
         normalizedLetter,
       ])
+
+      setGuesses(actualGuesses => actualGuesses - 1)
     }
   };
 
+  useEffect(()=>{
+    if(guesses <= 0){
+      // reset All states
+      setWrongLetters([])
+      setGuessedLetters([])
+
+      setGameStage(stages[2].name)
+    }
+  },[guesses])
+
   const retry = () => {
+    setScore(0)
+    setGuesses(3)
+    
     setGameStage(stages[0].name);
   };
 
