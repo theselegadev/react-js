@@ -51,7 +51,23 @@ function App() {
   };
 
   const verifyLetter = (letter) => {
-    console.log(letter)
+    const normalizedLetter = letter.toLowerCase()
+
+    if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)){
+      return
+    }
+
+    if(letters.includes(normalizedLetter)){
+      setGuessedLetters(actualGuessedLetters => [
+        ...actualGuessedLetters,
+        normalizedLetter,
+      ])
+    }else{
+      setWrongLetters(actualWrongLetters => [
+        ...actualWrongLetters,
+        normalizedLetter,
+      ])
+    }
   };
 
   const retry = () => {
