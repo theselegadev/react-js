@@ -5,6 +5,8 @@ const endpoint = "http://localhost:3000/products"
 
 function App() {
   const [products,setProducts] = useState([]);
+  const [name,setName] = useState("");
+  const [price,setPrice] = useState("")
   // - 1 resgatando dados
 
   useEffect(()=>{
@@ -16,7 +18,24 @@ function App() {
 
     fetchData()
   },[])
+  // add produtos
 
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+
+    const product = {
+      name,
+      price
+    }
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(product)
+    })
+  }
   return (
     <div className='App'>
       <h1>Lista produtos</h1>
@@ -25,6 +44,19 @@ function App() {
           <li key={item.id}>{item.name} - {item.price}</li>
         ))}
       </ul>
+      <div className="add-product">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Nome do produto:
+            <input type="text" value={name} onChange={(e)=>(setName(e.target.value))}/>
+          </label>
+          <label>
+            Preço do produto:
+            <input type="number" value={price} onChange={(e)=>(setPrice(e.target.value))}/>
+          </label>
+          <input type="submit" value="criar"/>
+        </form>
+      </div>
     </div>
   )
 }
