@@ -22,7 +22,7 @@ function App() {
   // },[])
   // add produtos
 
-  const {data: items, httpConfig} = useFetch(endpoint)
+  const {data: items, httpConfig, loading} = useFetch(endpoint)
 
   const handleSubmit = async (e)=>{
     e.preventDefault()
@@ -49,6 +49,8 @@ function App() {
   return (
     <div className='App'>
       <h1>Lista produtos</h1>
+      {/* loading */}
+      {loading && <p>Carregando os dados...</p>}
       <ul>
         {items && items.map(item=>(
           <li key={item.id}>{item.name} - {item.price}</li>
