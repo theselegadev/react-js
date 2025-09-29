@@ -66,7 +66,7 @@ function App() {
             Preço do produto:
             <input type="number" value={price} onChange={(e)=>(setPrice(e.target.value))}/>
           </label>
-          <input type="submit" value="criar"/>
+          {!loading && <input type="submit" value="criar"/>}
         </form>
       </div>
     </div>
