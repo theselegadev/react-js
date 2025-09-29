@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { useFetch } from './Hooks/useFetch';
 
-const endpoint = "http://localhost:3000/products"
+const endpoint = "http://localhost:3001/products"
 
 function App() {
   const [products,setProducts] = useState([]);
@@ -22,7 +22,7 @@ function App() {
   // },[])
   // add produtos
 
-  const {data: items, httpConfig, loading} = useFetch(endpoint)
+  const {data: items, httpConfig, loading, error} = useFetch(endpoint)
 
   const handleSubmit = async (e)=>{
     e.preventDefault()
@@ -51,6 +51,7 @@ function App() {
       <h1>Lista produtos</h1>
       {/* loading */}
       {loading && <p>Carregando os dados...</p>}
+      {error && <p>Aconteceu algum erro</p>}
       <ul>
         {items && items.map(item=>(
           <li key={item.id}>{item.name} - {item.price}</li>
