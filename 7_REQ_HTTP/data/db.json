@@ -14,6 +14,26 @@
       "id": "3",
       "name": "Boné aba reta",
       "price": 29.9
+    },
+    {
+      "id": "75ee",
+      "name": "cueca",
+      "price": "123"
+    },
+    {
+      "id": "ea34",
+      "name": "teste",
+      "price": "123"
+    },
+    {
+      "id": "1689",
+      "name": "legal",
+      "price": "12"
+    },
+    {
+      "id": "b8c1",
+      "name": "t",
+      "price": "3"
     }
   ]
 }

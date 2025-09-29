@@ -22,7 +22,7 @@ function App() {
   // },[])
   // add produtos
 
-  const {data: items} = useFetch(endpoint)
+  const {data: items, httpConfig} = useFetch(endpoint)
 
   const handleSubmit = async (e)=>{
     e.preventDefault()
@@ -32,17 +32,19 @@ function App() {
       price
     }
 
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type":"application/json"
-      },
-      body: JSON.stringify(product)
-    })
-    const addedProduct = await response.json()
+    // const response = await fetch(endpoint, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type":"application/json"
+    //   },
+    //   body: JSON.stringify(product)
+    // })
+    // const addedProduct = await response.json()
 
-    //3 - carregamento dinâmico
-    setProducts((prevPrducts) => [...prevPrducts,addedProduct])
+    // //3 - carregamento dinâmico
+    // setProducts((prevPrducts) => [...prevPrducts,addedProduct])
+
+    httpConfig(product, "POST")
   }
   return (
     <div className='App'>
