@@ -1,26 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import './App.css'
 import { useFetch } from './Hooks/useFetch';
 
-const endpoint = "http://localhost:3001/products"
+const endpoint = "http://localhost:3000/products"
 
 function App() {
-  const [products,setProducts] = useState([]);
   const [name,setName] = useState("");
   const [price,setPrice] = useState("")
-
-  // - 1 resgatando dados
-
-  // useEffect(()=>{
-  //   async function fetchData() {
-  //     const response = await fetch(endpoint)
-  //     const data = await response.json()
-  //     setProducts(data)
-  //   }
-
-  //   fetchData()
-  // },[])
-  // add produtos
 
   const {data: items, httpConfig, loading, error} = useFetch(endpoint)
 
@@ -32,19 +18,11 @@ function App() {
       price
     }
 
-    // const response = await fetch(endpoint, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type":"application/json"
-    //   },
-    //   body: JSON.stringify(product)
-    // })
-    // const addedProduct = await response.json()
-
-    // //3 - carregamento dinâmico
-    // setProducts((prevPrducts) => [...prevPrducts,addedProduct])
-
     httpConfig(product, "POST")
+  }
+
+  const handleDelete = async (id) => {
+    httpConfig(id,"DELETE")
   }
   return (
     <div className='App'>
@@ -54,7 +32,7 @@ function App() {
       {error && <p>Aconteceu algum erro</p>}
       <ul>
         {items && items.map(item=>(
-          <li key={item.id}>{item.name} - {item.price}</li>
+          <li key={item.id}>{item.name} - {item.price} <button onClick={()=>(handleDelete(item.id))}>Deletar</button></li>
         ))}
       </ul>
       <div className="add-product">

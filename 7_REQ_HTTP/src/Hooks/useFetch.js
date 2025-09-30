@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 
 //  custom hook
 export const useFetch = (url)=>{
@@ -13,6 +13,8 @@ export const useFetch = (url)=>{
 
     // tratando erros
     const [error,setError] = useState(null)
+    // desafio
+    const [itemId,setItemId] = useState("")
 
     const httpConfig = (data, method)=>{
         if(method === 'POST'){
@@ -24,8 +26,17 @@ export const useFetch = (url)=>{
                 body: JSON.stringify(data)
             })
 
-            setMethod(method)
+        }else if(method === 'DELETE'){
+            setConfig({
+                method,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
         }
+
+        setMethod(method)
+        setItemId(data)
     }
 
     useEffect(()=>{
@@ -35,12 +46,12 @@ export const useFetch = (url)=>{
             try{
                 const response = await fetch(url)
                 const responseJson = await response.json()
+                setData(responseJson)
             }catch(error){
                 console.log(error.message)
                 setError("Houve algum erro ao carregar os dados")
             }
 
-            setData(responseJson)
             setLoading(false)
         }
 
@@ -56,7 +67,17 @@ export const useFetch = (url)=>{
                 const response = await fetch(...fetchOptions)
                 const json = await response.json()
 
-                setCallFetch(json)
+                setCallFetch(prev => !prev)
+            }
+
+            requestHttp()
+        }else if(method ===  'DELETE'){
+            const requestHttp = async ()=>{
+                const endpoint = url + `/${itemId}`
+
+                const response = await fetch(endpoint,config)
+
+                setCallFetch(prev => !prev)
             }
 
             requestHttp()
