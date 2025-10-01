@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Notebook Dell Inspiron",
+      "price": 3499.99
+    },
+    {
+      "id": 2,
+      "name": "Mouse Logitech MX Master",
+      "price": 299.90
+    },
+    {
+      "id": 3,
+      "name": "Teclado Mecânico Keychron",
+      "price": 549.00
+    }
+  ]
+}

@@ -1,9 +1,3 @@
 {
-  "products": [
-    {
-      "id": "be70",
-      "name": "teste",
-      "price": "5"
-    }
-  ]
+  "products": []
 }
